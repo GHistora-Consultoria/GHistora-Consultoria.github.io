@@ -1,251 +1,324 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>GHistora Consultoría Territorial — Análisis territorial y SIG</title>
+<meta name="description" content="Servicios profesionales de análisis territorial, teledetección y sistemas de información geográfica para municipios, despachos y proyectos. Asturias y toda España.">
+<link rel="canonical" href="https://ghistora-consultoria.github.io/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="GHistora Consultoría Territorial — Análisis territorial y SIG">
+<meta property="og:description" content="Servicios profesionales de análisis territorial, teledetección y sistemas de información geográfica para municipios, despachos y proyectos. Asturias y toda España.">
+<meta property="og:image" content="https://ghistora-consultoria.github.io/assets/servicio-1-situacion.png">
+<meta property="og:url" content="https://ghistora-consultoria.github.io/">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Datos estructurados (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "GHistora Consultoría Territorial",
+  "description": "Servicios de análisis territorial, teledetección y SIG para municipios y proyectos en España.",
+  "areaServed": "ES",
+  "email": "ghistora@gmail.com",
+  "founder": { "@type": "Person", "name": "Nélida Pamela Díaz Colodrero" },
+  "url": "https://ghistora-consultoria.github.io/"
+}
+</script>
+<link rel="stylesheet" href="_ds/classical-9a303060-4c57-4b1e-93dc-c5849a2c8d62/styles.css">
+<style>
+  body {
+    margin: 0;
+    background-color: var(--color-bg);
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--color-bg) 88%, white), color-mix(in srgb, var(--color-bg) 88%, white)),
+      url('assets/textura-fondo-mapa.png');
+    background-blend-mode: luminosity, normal;
+    background-size: auto, 900px;
+    background-repeat: repeat, repeat;
+  }
+  .gh-page-frame { margin: 32px; box-shadow: inset 0 0 0 2px var(--color-accent-700), inset 0 0 0 4px var(--gh-purple); min-height: calc(100vh - 64px); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  .gh-wrap { max-width: 1100px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+  .gh-section { padding: var(--space-8) 0; }
+  .gh-p { font-family: var(--font-body); font-size: 18px; line-height: 1.75; text-align: justify; hyphens: auto; color: var(--color-text); margin: 0; }
+  .gh-kicker { display: block; font-family: var(--font-body); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 var(--space-3); }
+  .gh-h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 32px; color: var(--color-text); margin: 0 0 var(--space-2); }
+  .gh-cap { font-family: var(--font-body); font-style: italic; color: color-mix(in srgb, var(--color-text) 70%, transparent); margin: 0 0 var(--space-4); font-size: 16px; }
+  .gh-grid { display: grid; gap: var(--space-4); margin-top: var(--space-6); align-items: start; }
+  .gh-grid .card { height: auto; }
+  @media (min-width: 780px) { .gh-grid-3 { grid-template-columns: repeat(3, 1fr); } .gh-grid-2 { grid-template-columns: repeat(2, 1fr); } }
+  .gh-plate img { width: 100%; display: block; border-radius: var(--radius-sm); }
+  .gh-plate { box-shadow: 0 0 0 2px var(--color-accent-700), 0 0 0 4px var(--gh-purple); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+  .gh-plate:hover { box-shadow: 0 0 0 2px var(--gh-purple), 0 0 0 4px var(--color-accent-700); transform: translateY(-4px); }
+  .card { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+  .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--gh-purple); }
+  @keyframes gh-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+  .gh-kicker { position: relative; }
+  .gh-kicker::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--gh-purple); margin-right: 8px; animation: gh-pulse 2.4s ease-in-out infinite; }
+  :root { --gh-purple: oklch(46% 0.09 306); --gh-purple-tint: oklch(46% 0.09 306 / 0.08); }
+  .gh-purple-card { border-top: 3px solid var(--gh-purple); }
+  .gh-purple-num { color: var(--gh-purple) !important; }
+</style>
 </head>
 <body>
-<template id="__bundler_thumbnail">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#c9a876"/><g fill="none" stroke="#9c4a2b" stroke-width="4" stroke-linecap="round"><path d="M40 130 L80 70 L110 110 L150 50"/><circle cx="100" cy="100" r="60" stroke="#f1e7d3"/></g><text x="100" y="175" font-family="Georgia, serif" font-size="20" fill="#3c2f22" text-anchor="middle">RA</text></svg>
-</template>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
-<style>
-  body { margin: 0; }
-  .rd-body { font-family: 'EB Garamond', Georgia, serif; color: #3c2f22; font-size: 22px; }
-  .rd-h1, .rd-h2, .rd-h3 { font-family: 'Playfair Display', Georgia, serif; color: #9c4a2b; font-weight: 600; }
-  .rd-body p { line-height: 1.9; text-align: justify; }
-  .rd-body a { color: #9c4a2b; }
-  .rd-body a:hover { color: #6f7d55; }
-  .rd-cap { font-style: italic; color: #6b5a45; }
-  ::selection { background: #d9c49a; }
-  @keyframes rd-float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
-  .rd-hero-float { animation: rd-float 5s ease-in-out infinite; }
-  .rd-hero-wrap { overflow: hidden; }
-  .rd-hero-bg { transition: transform 1.2s ease; }
-  .rd-hero-wrap:hover .rd-hero-bg { transform: scale(1.08); }
-</style>
-</helmet>
-
-<div class="rd-body" style="background-color: #f1e7d3; background-image: url('uploads/pasted-1787160628396-0.png'); background-repeat: repeat; background-size: 620px; background-blend-mode: multiply; box-shadow: inset 0 0 0 14px #f1e7d3, inset 0 0 90px 20px rgba(120, 94, 58, 0.28); min-height: 100vh;">
-
-<div class="rd-hero-wrap" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; box-sizing: border-box; border: 14px solid #3c2f22; min-height: 62vh; display: flex; align-items: center; justify-content: center;">
-  <div class="rd-hero-bg" style="position: absolute; inset: 0; background-image: linear-gradient(rgba(30,22,14,0.4), rgba(30,22,14,0.4)), url('uploads/portada_mapa_proaza.jpg'); background-size: cover; background-position: center;"></div>
-  <div class="rd-hero-float" style="position: relative; max-width: 1100px; margin: 0 auto; padding: 40px 24px; text-align: center;">
-    <p style="font-family: 'Cinzel', Georgia, serif; font-size: clamp(44px, 7vw, 78px); margin: 0 0 8px; letter-spacing: 0.05em; color: #3c2f22; text-shadow: 0 3px 14px rgba(0,0,0,0.6); text-align: center;">Portfolio cartográfico</p>
-    <p style="font-family: 'Cinzel', Georgia, serif; font-size: clamp(30px, 4.4vw, 48px); margin: 0 0 22px; letter-spacing: 0.02em; color: #d9c49a; text-shadow: 0 2px 10px rgba(0,0,0,0.55); text-align: center;">Nélida Pamela Díaz Colodrero</p>
-    <p style="font-size: 23px; margin: 0 0 16px; color: #d9c49a; font-style: italic; text-shadow: 0 2px 8px rgba(0,0,0,0.5); text-align: center;">Grado en Historia (Universidad de Oviedo) · Máster en Recursos Territoriales y Estrategias de Ordenación (Universidad de Oviedo / Universidad de Cantabria)</p>
-    <p style="font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: #d9c49a; margin: 0; text-shadow: 0 2px 6px rgba(0,0,0,0.5); text-align: center;">Un caso de uso como ejemplo</p>
-    <p style="font-size: 16px; letter-spacing: 0.1em; color: #d9c49a; margin: 6px 0 0; text-shadow: 0 2px 6px rgba(0,0,0,0.5); text-align: center;">2026</p>
-  </div>
-</div>
-<nav style="max-width: 1100px; margin: 0 auto; padding: 28px 24px 0; display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; font-size: 12.5px; letter-spacing: 0.11em; text-transform: uppercase; color: #6b5a45;">
-  <a href="#contexto" style="text-decoration: none;">Contexto</a>
-  <a href="#relieve" style="text-decoration: none;">Relieve</a>
-  <a href="#geologia" style="text-decoration: none;">Geología</a>
-  <a href="#territorio" style="text-decoration: none;">Territorio</a>
-  <a href="#teledeteccion" style="text-decoration: none;">Teledetección</a>
-  <a href="#escenarios" style="text-decoration: none;">Escenarios</a>
-  <a href="#conclusiones" style="text-decoration: none;">Conclusiones</a>
-</nav>
-
-<header style="max-width: 1100px; margin: 0 auto; padding: 56px 24px 40px; text-align: center;">
-  <h1 class="rd-h1" style="font-size: clamp(38px, 6vw, 58px); margin: 0 0 10px; letter-spacing: 0.01em;">Ribera de Arriba</h1>
-  <p class="rd-cap" style="font-size: 20px; margin: 0 0 22px; text-align: center;">Un retrato cartográfico del concejo, Asturias</p>
-  <div style="width: 120px; height: 1px; background: #c3aa7c; margin: 0 auto 26px;"></div>
-  <p style="font-size: 18px; line-height: 1.75; text-align: left;">Este portafolio reúne el diagnóstico territorial que elaboré para Ribera de Arriba: dónde se sitúa, cómo es su relieve y su geología, cómo se reparte el uso del suelo y la población, y qué ha cambiado sobre el terreno entre 2018 y 2026 a partir de imágenes de satélite. Combiné fuentes oficiales — IGN, IGME, SIOSE, Catastro, MITECO, Copernicus/Sentinel-2 — con procesamiento geoespacial propio: álgebra de bandas sobre series temporales, cruces vectoriales reales entre capas y cálculo de accesibilidad sobre la red viaria oficial, no sobre distancia en línea recta. Cierro con tres escenarios de futuro, leídos como lo que son: proyecciones cualitativas, no predicciones numéricas.</p>
-</header>
-
-<section id="contexto" style="max-width: 1100px; margin: 0 auto; padding: 36px 24px;">
-  <h2 class="rd-h2" style="font-size: 30px; margin: 0 0 4px;">Contexto y localización</h2>
-  <div style="width: 60px; height: 1px; background: #c3aa7c; margin: 0 0 20px;"></div>
-  <p>Ribera de Arriba se encuentra en el centro de Asturias, lindando con Oviedo, Morcín y Santo Adriano, y forma parte de la comarca agraria de Oviedo. Ocupa unas 2.200 hectáreas en torno al centroide 43,3046 N / 5,8857 O. Su forma alargada sigue el curso del río, que atraviesa el concejo de oeste a este y concentra en su vega la mayor parte de los núcleos de población, empezando por la capital, Soto Ribera.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/ubicacion_ribera_de_arriba.png" alt="Mapa de situación y localización territorial" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Situación de Ribera de Arriba dentro de Asturias, con sus tres municipios limítrofes.</p>
-  <p>Dentro de la comarca agraria de Oviedo, que agrupa un territorio mucho mayor en torno a la capital regional, Ribera de Arriba ocupa el extremo suroeste: una posición de borde, pegada a la comarca pero con dinámicas propias de concejo rural pequeño.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_comarca_agraria_ribera_de_arriba.png" alt="Comarca agraria de Oviedo" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Encaje de Ribera de Arriba en la comarca agraria de Oviedo (cód. 3307).</p>
-  <p>Para leer el territorio en conjunto reuní en un mismo visor los límites municipales, las zonas de inundación oficiales (T10, T100, T500), el suelo urbano y los instrumentos de planeamiento vigentes, y toda la red de transporte. Es la capa base sobre la que se apoyan el resto de análisis de este portafolio.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/TERRA_visor_2026-08-10_17-38-58.png" alt="Visor con límites, inundabilidad, planeamiento y transporte" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 4px;">Límite municipal, inundabilidad SNCZI, suelo urbano y red de transporte sobre cartografía topográfica.</p>
-  <div style="width: 1500px; max-width: 92vw; position: relative; left: 50%; transform: translateX(-50%); margin-top: 20px;">
-    <iframe src="visor-contexto-ribera-v2.html" style="width: 100%; height: 700px; border: 1px solid #d9c49a; display: block; box-sizing: border-box;" loading="lazy"></iframe>
-  </div>
-  <p style="text-align: justify; margin: 12px 0 0;">Este visor interactivo, generado automáticamente por TERRA SISTEMA, permite explorar el territorio capa por capa directamente desde el navegador, sin necesidad de instalar ningún software SIG. Con el control de capas de la esquina superior derecha puedes activar o desactivar de forma independiente el límite municipal, las zonas de inundación oficiales del SNCZI en sus tres periodos de retorno (T10, T100 y T500), el suelo urbano y urbanizable, los instrumentos de planeamiento vigentes, los elementos catalogados y bienes de interés cultural, y la red de transporte completa. Algunas capas, suelo urbano y urbanizable, planeamiento, elementos catalogados, bienes de interés cultural y usos del suelo, muestran además información detallada al pasar el ratón sobre cada elemento. Haz zoom y desplázate libremente por el mapa para explorar el territorio con el mismo nivel de detalle que se entrega en cada informe técnico.</p>
-  <p style="text-align: justify; margin: 12px 0 0;">La barra de herramientas de la izquierda añade funciones propias de un visor cartográfico profesional: zoom con los botones + y −, selección de un área concreta para consultarla en detalle, búsqueda de lugares y coordenadas, pantalla completa para una exploración más cómoda, y colocación de marcadores propios sobre el mapa. El icono de la cámara exporta directamente la vista actual como mapa listo para imprimir, en formato PNG o PDF, con escala gráfica, leyenda de capas activas y flecha de norte incluidas, sin necesidad de montarlo aparte en ningún programa de diseño. Todo el visor, capas y herramientas incluidas, se ciñe siempre al territorio objeto de estudio: en este caso, el concejo de Ribera de Arriba.</p>
-</section>
-
-<div style="max-width: 200px; margin: 8px auto 0; text-align: center; color: #c3aa7c; font-size: 20px;">❦</div>
-
-<section id="relieve" style="max-width: 1100px; margin: 0 auto; padding: 36px 24px;">
-  <h2 class="rd-h2" style="font-size: 30px; margin: 0 0 4px;">Relieve y topografía</h2>
-  <div style="width: 60px; height: 1px; background: #c3aa7c; margin: 0 0 20px;"></div>
-  <p>El concejo se organiza en torno a dos brazos de valle que se juntan en el centro, donde el terreno baja hasta poco más de 100 metros sobre el nivel del mar. A ambos lados, las laderas suben hasta cumbres que superan los 450-500 metros: un relieve de vega estrecha entre montañas, típico de la Asturias central.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/relieve_pintado_ribera_de_arriba.png" alt="Relieve del territorio" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Relieve por altitud y pendiente, con el entorno territorial atenuado como referencia.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/ribera_de_arriba_hillshade.png" alt="Relieve sombreado" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Relieve sombreado: el fondo de valle, en azul, apenas supera los 130 m; las cumbres del sur rondan los 500 m.</p>
-  <p>Las curvas de nivel muestran lo mismo con más detalle: cuanto más juntas están las líneas, más pronunciada es la ladera. Esa lectura ayuda a entender dónde es más fácil asentarse o cultivar, y dónde el terreno es más propenso a la erosión.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/curvas_nivel_ribera_de_arriba.png" alt="Curvas de nivel" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Curvas maestras cada 250 m y secundarias cada 50 m sobre el mapa topográfico del IGN.</p>
-  <p>Dos perfiles topográficos atraviesan el concejo en sus direcciones principales. El primero, de noroeste a sureste, sube desde la vega hasta un máximo de 435 m antes de volver a bajar. El segundo, de oeste a este, arranca ya alto —466 m— desciende a un collado de apenas 176 m en el centro, y vuelve a subir a 450 m hacia el este: el corte muestra bien esa alternancia de sierra, valle y sierra que define el paisaje del concejo.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/ribera_de_arriba_perfil_desnivel.png" alt="Perfil topográfico NO-SE" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Perfil NO-SE, con un máximo de 435 m.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/ribera_de_arriba_perfil_ejemayor.png" alt="Perfil topográfico O-E" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0;">Perfil O-E, de 466 m en el extremo occidental a un collado de 176 m y una segunda cima de 450 m.</p>
-  <div style="margin: 32px 0 4px; padding: 20px; border: 1px solid #d9c49a; background: rgba(255,255,255,0.35);">
-    <p style="margin: 0 0 12px;">Además de estos mapas estáticos, TERRA SISTEMA genera un modelo tridimensional navegable del relieve del concejo, con textura topográfica real drapeada sobre el terreno. Por su peso (más de 100 MB, al incluir la textura completa a máxima resolución), no se puede incrustar directamente en esta página, pero puede descargarse y abrirse en cualquier navegador para explorarlo con zoom, rotación e inclinación libres.</p>
-    <p style="margin: 0; text-align: center;"><a href="https://github.com/GHistora-Consultoria/PORTFOLIO-CARTOGRAFICO/releases/download/relieve3d-ribera-v1/relieve3d_mtn_ribera_de_arriba.1.html" style="font-weight: 600;">📥 Descargar el modelo 3D del relieve de Ribera de Arriba</a></p>
-    <p style="margin: 10px 0 0; text-align: center; font-size: 15px; color: #6b5a45;">⚠️ Recomendaciones para abrir el modelo 3D: funciona mejor en <strong>Firefox de escritorio</strong>. En Chrome puede no cargar la escena por restricciones de seguridad del navegador con archivos locales grandes. En dispositivos móviles, el tamaño del archivo puede hacer que la carga sea lenta o no llegue a completarse.</p>
-  </div>
-</section>
-
-<div style="max-width: 200px; margin: 8px auto 0; text-align: center; color: #c3aa7c; font-size: 20px;">❦</div>
-
-<section id="geologia" style="max-width: 1100px; margin: 0 auto; padding: 36px 24px;">
-  <h2 class="rd-h2" style="font-size: 30px; margin: 0 0 4px;">Geología</h2>
-  <div style="width: 60px; height: 1px; background: #c3aa7c; margin: 0 0 20px;"></div>
-  <p>Bajo ese relieve hay una geología plegada y fallada: calizas grises, pizarras y areniscas, cuarcitas y algún tramo de calizas y margas apizarradas, con fallas y pliegues que atraviesan el concejo de oeste a este. Sobre el mapa geológico oficial del IGME anoté también las medidas de buzamiento disponibles, el ángulo con el que se inclinan los estratos, útil para valorar la estabilidad de las laderas.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/geologia_ribera_de_arriba.png" alt="Geología, MAGNA 50" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Litologías, fallas y estructuras de plegamiento (IGME, MAGNA 1:50.000).</p>
-  <p>La misma información, leída por edad geológica en vez de por litología, muestra franjas que van del Lochkoviense y el Wenlock —hace más de 400 millones de años— hasta el Holoceno reciente en el propio fondo de valle.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/geode_litologia_ribera_de_arriba.png" alt="Litología GEODE 50" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Litología por piso cronoestratigráfico (IGME, GEODE 50).</p>
-  <p>El mapa de movimientos del terreno del IGME cubre prácticamente todo el concejo con dos fenómenos de escala regional —movimientos verticales sobre materiales carbonatados y movimientos horizontales—, aunque su escala, 1:1.000.000, es demasiado general para localizar el riesgo dentro de una parcela concreta: dice que el fenómeno existe en la zona, no dónde exactamente.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mterreno_riesgos_ribera_de_arriba.png" alt="Riesgos y movimientos del terreno" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0;">Movimientos del terreno cartografiados a escala regional (IGME, Mapa de Movimientos del Terreno).</p>
-</section>
-
-<div style="max-width: 200px; margin: 8px auto 0; text-align: center; color: #c3aa7c; font-size: 20px;">❦</div>
-
-<section id="territorio" style="max-width: 1100px; margin: 0 auto; padding: 36px 24px;">
-  <h2 class="rd-h2" style="font-size: 30px; margin: 0 0 4px;">Territorio, usos y accesibilidad</h2>
-  <div style="width: 60px; height: 1px; background: #c3aa7c; margin: 0 0 20px;"></div>
-  <p>Casi dos tercios del concejo, 1.425 de las 2.200 hectáreas, están clasificados como sector primario: uso agrícola, forestal, minero o pesquero. Pero una porción muy notable, 619 hectáreas, figura sin uso o en transición — el primer dato a mirar en cualquier estrategia de recuperación de suelo agrario o forestal. El resto se reparte entre transporte e infraestructuras (108 ha), industria (53 ha), uso residencial (16 ha) y servicios (15 ha).</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_usos_suelo_ribera_de_arriba.png" alt="Usos del suelo (SIOSE)" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Usos del suelo por categoría (SIOSE AR, revisión 2017).</p>
-  <p>Crucé las clases agrológicas oficiales —la capacidad real del suelo para el uso agrario— con el uso efectivo detectado, y aparecen dos listas de trabajo complementarias: 686 parches de agricultura activa sobre suelo de máxima limitación, candidatos a reconversión por riesgo de erosión, y 333 parches de buena clase agrológica que hoy no se usan, una oportunidad de recuperación agraria que ni el dato agrológico ni el catastral ofrecen por separado.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_aptitud_agraria_ribera_de_arriba.png" alt="Aptitud agraria y desajustes de uso" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Clases agrológicas oficiales frente a uso real: 686 parches de riesgo, 333 de oportunidad.</p>
-  <p>Sobre el catastro conté 6.418 parcelas, con un tamaño medio de 3.419 m² y una mediana de apenas 1.166 m²: casi la mitad, el 46%, no llega a las 0,1 hectáreas. Es una estructura de propiedad muy fragmentada, herencia de siglos de reparto agrario, que condiciona cualquier intento de gestión conjunta del territorio.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_parcelario_ribera_de_arriba.png" alt="Fragmentación parcelaria" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Fragmentación parcelaria: 6.418 parcelas, densidad de 2,92 por hectárea.</p>
-  <p>La red viaria del concejo combina un tramo de autovía y un corredor ferroviario que cruzan de norte a sur por el este, con carreteras locales y municipales que reparten el tráfico interno, y una malla amplia de caminos y sendas —271 y 227 tramos respectivamente— que sostiene la movilidad rural.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_transporte_ribera_de_arriba.png" alt="Red de transporte" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Red de transporte por categoría (SITPA-IDEAS, Principado de Asturias).</p>
-  <p>La población se concentra en la vega: Soto Ribera, la capital, reúne el núcleo más poblado, y a su alrededor se distribuyen otras veinticinco entidades de población, casi todas de tamaño pequeño y disperso hacia las laderas.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_densidad_poblacion_ribera_de_arriba.png" alt="Distribución de la población por entidad" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Población por entidad, tamaño proporcional al número de habitantes (Nomenclátor IGN/CNIG).</p>
-  <p>Calculé isócronas reales de accesibilidad desde Soto Ribera sobre la red viaria oficial, no en línea recta: los núcleos del entorno inmediato quedan a menos de 8 minutos, mientras que los más alejados, hacia los extremos del concejo, superan los 16-20 minutos por carretera.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/isocronas_ribera_de_arriba.png" alt="Isocronas de accesibilidad" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Isócronas de accesibilidad desde Soto Ribera sobre la red viaria real.</p>
-  <p>Por último, crucé las zonas protegidas —Red Natura 2000, espacios naturales y montes de utilidad pública— con los usos del suelo incompatibles: aparecen 25 parches de transporte, industria o residencial dentro de esas zonas, concentrados sobre todo en un corredor concreto del centro del concejo.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_conflictos_uso_protegido_ribera_de_arriba.png" alt="Conflictos de uso en zonas protegidas" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0;">25 parches de uso incompatible detectados dentro de zonas protegidas.</p>
-</section>
-
-<div style="max-width: 200px; margin: 8px auto 0; text-align: center; color: #c3aa7c; font-size: 20px;">❦</div>
-
-<section id="teledeteccion" style="max-width: 1100px; margin: 0 auto; padding: 36px 24px;">
-  <h2 class="rd-h2" style="font-size: 30px; margin: 0 0 4px;">Teledetección: qué cambió entre 2018 y 2026</h2>
-  <div style="width: 60px; height: 1px; background: #c3aa7c; margin: 0 0 20px;"></div>
-  <p>Para medir el cambio real sobre el terreno comparé dos fechas de imágenes Sentinel-2, 2018 y 2026, con cuatro índices espectrales: vegetación (NDVI), humedad (NDWI), suelo construido (NDBI) y severidad de quemas (NBR). En cada caso, un cambio se cuenta como pérdida o ganancia solo si supera un umbral de ±0,15; todo lo que queda dentro de ese margen se considera estable.</p>
-
-  <h3 class="rd-h3" style="font-size: 21px; margin: 30px 0 14px;">Vegetación (NDVI)</h3>
-  <p>La vegetación retrocedió en el 19,1% del territorio —420,9 hectáreas— y solo se regeneró en el 1,7%, 37,6 hectáreas; el 79,2% restante se mantuvo estable. Es un balance claramente negativo, con la pérdida concentrada en la vega y en las laderas más cercanas a los núcleos habitados.</p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0 6px;">
-    <figure style="margin: 0;"><img src="uploads/mapa_ndvi_2018.png" alt="NDVI 2018" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-    <figure style="margin: 0;"><img src="uploads/mapa_ndvi_2026(2).png" alt="NDVI 2026" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  </div>
-  <p class="rd-cap" style="text-align: center; margin: 6px 0 20px; font-size: 15px;">NDVI en 2018 y en 2026, lado a lado.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_cambios_ribera_de_arriba.png" alt="Detección de cambios NDVI" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Pérdida (roja), estabilidad y regeneración (verde) de NDVI, 2018-2026.</p>
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 22px 0 6px;">
-    <figure style="margin: 0;"><img src="uploads/histograma_ribera_de_arriba.png" alt="Distribución de cambios NDVI" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-    <figure style="margin: 0;"><img src="uploads/barras_ribera_de_arriba.png" alt="Distribución del cambio de cobertura" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-    <figure style="margin: 0;"><img src="uploads/tarta_ribera_de_arriba.png" alt="Distribución porcentual del cambio" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  </div>
-  <p class="rd-cap" style="text-align: center; margin: 6px 0 24px; font-size: 15px;">Misma cifra, tres lecturas: distribución de píxeles, superficie por categoría y reparto porcentual.</p>
-
-  <h3 class="rd-h3" style="font-size: 21px; margin: 30px 0 14px;">Humedad (NDWI)</h3>
-  <p>El agua superficial se mantuvo casi sin cambios: el 92,6% del territorio permaneció estable, con una ganancia de humedad del 6,5% —143,6 hectáreas— frente a una pérdida marginal del 0,9%. Las líneas rojas que sí aparecen siguen de cerca el trazado del río principal.</p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0 6px;">
-    <figure style="margin: 0;"><img src="uploads/mapa_ndwi_2018.png" alt="NDWI 2018" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-    <figure style="margin: 0;"><img src="uploads/mapa_ndwi_2026(2).png" alt="NDWI 2026" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  </div>
-  <p class="rd-cap" style="text-align: center; margin: 6px 0 20px; font-size: 15px;">NDWI en 2018 y en 2026.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_cambios_ndwi_ribera_de_arriba.png" alt="Detección de cambios NDWI" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0;">Cambios de humedad 2018-2026: 92,6% estable, 6,5% de ganancia.</p>
-
-  <h3 class="rd-h3" style="font-size: 21px; margin: 30px 0 14px;">Suelo construido (NDBI)</h3>
-  <p>El suelo construido creció el 20,8% del territorio —455 hectáreas— frente a una pérdida de apenas el 1,5%. Es el índice con el cambio más marcado de los cuatro, y su patrón coincide con el crecimiento de los núcleos a lo largo de los ejes viarios.</p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0 6px;">
-    <figure style="margin: 0;"><img src="uploads/mapa_ndbi_2018(1).png" alt="NDBI 2018" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-    <figure style="margin: 0;"><img src="uploads/mapa_ndbi_2026(1).png" alt="NDBI 2026" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  </div>
-  <p class="rd-cap" style="text-align: center; margin: 6px 0 20px; font-size: 15px;">NDBI en 2018 y en 2026.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_cambios_ndbi_ribera_de_arriba.png" alt="Detección de cambios NDBI" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0;">Ganancia de suelo construido, 2018-2026: 20,8% del territorio.</p>
-
-  <h3 class="rd-h3" style="font-size: 21px; margin: 30px 0 14px;">Severidad de quemas (NBR)</h3>
-  <p>La pérdida de vegetación leñosa o señal de quema afectó al 24,7% del territorio —542 hectáreas—, con una recuperación de solo el 1,8%. Es el índice con la pérdida más extensa de los cuatro, coherente con el retroceso que ya mostraba el NDVI.</p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0 6px;">
-    <figure style="margin: 0;"><img src="uploads/mapa_nbr_2018.png" alt="NBR 2018" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-    <figure style="margin: 0;"><img src="uploads/mapa_nbr_2026.png" alt="NBR 2026" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  </div>
-  <p class="rd-cap" style="text-align: center; margin: 6px 0 20px; font-size: 15px;">NBR en 2018 y en 2026.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_cambios_nbr_ribera_de_arriba.png" alt="Detección de cambios NBR" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Pérdida de vegetación/quema, 2018-2026: 24,7% del territorio.</p>
-
-  <h3 class="rd-h3" style="font-size: 21px; margin: 30px 0 14px;">Síntesis cruzada</h3>
-  <p>Superpuse los cuatro índices para ver dónde coinciden varias señales de cambio a la vez. En el 78,5% del territorio no coincide ninguna; en el 15,8% coinciden tres de las seis combinaciones evaluadas. Son las zonas donde el cambio no es un artefacto de un solo índice, sino una transformación real y sostenida del terreno.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_sintesis_cruzada_ribera_de_arriba.png" alt="Síntesis cruzada de índices" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0;">Densidad de coincidencias entre los seis cruces posibles de los cuatro índices.</p>
-</section>
-
-<div style="max-width: 200px; margin: 8px auto 0; text-align: center; color: #c3aa7c; font-size: 20px;">❦</div>
-
-<section id="escenarios" style="max-width: 1100px; margin: 0 auto; padding: 36px 24px 64px;">
-  <h2 class="rd-h2" style="font-size: 30px; margin: 0 0 4px;">Escenarios</h2>
-  <div style="width: 60px; height: 1px; background: #c3aa7c; margin: 0 0 20px;"></div>
-  <p>A partir de la regeneración y la pérdida de NDVI observadas, construí tres lecturas cualitativas del futuro del territorio: no son modelos predictivos numéricos, sino tres formas de proyectar la misma tendencia observada bajo hipótesis distintas.</p>
-  <p>El escenario óptimo toma la infraestructura verde ya existente —el patrimonio natural protegido— como base para una intervención planificada de recuperación.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_escenario_optimo_ribera_de_arriba.png" alt="Escenario óptimo" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Escenario óptimo: regeneración observada sobre la base del patrimonio natural protegido.</p>
-  <p>El escenario tendencial supone que la dinámica actual continúa sin ninguna intervención, con un halo de expansión potencial de 75 metros alrededor de cada foco de pérdida ya detectado.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_escenario_tendencial_ribera_de_arriba.png" alt="Escenario tendencial" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0 20px;">Escenario tendencial: continuidad de la pérdida de NDVI observada, sin intervención.</p>
-  <p>El escenario de riesgo agrava esa misma carga de combustible vegetal allí donde queda a menos de 500 metros de un núcleo de población, el punto donde una perturbación extrema tendría consecuencias directas sobre las personas.</p>
-  <figure style="margin: 24px 0;"><img src="uploads/mapa_escenario_riesgo_ribera_de_arriba.png" alt="Escenario de riesgo" style="width: 100%; display: block; border: 1px solid #d9c49a;"></figure>
-  <p class="rd-cap" style="text-align: center; margin: -12px 0;">Escenario de riesgo: carga de combustible agravada cerca de la población.</p>
-</section>
-
-<div style="max-width: 200px; margin: 8px auto 0; text-align: center; color: #c3aa7c; font-size: 20px;">❦</div>
-<section id="conclusiones" style="max-width: 1100px; margin: 0 auto; padding: 36px 24px 64px;">
-  <h2 class="rd-h2" style="font-size: 30px; margin: 0 0 4px;">Conclusiones</h2>
-  <div style="width: 60px; height: 1px; background: #c3aa7c; margin: 0 0 20px;"></div>
-  <p>El diagnóstico de Ribera de Arriba deja un balance con dos caras claramente diferenciadas. Por un lado, el territorio pierde: casi una cuarta parte de la superficie muestra señal de pérdida de vegetación leñosa entre 2018 y 2026, con un avance paralelo del suelo construido concentrado en torno a los ejes viarios y los núcleos habitados. Por otro, ese mismo diagnóstico señala dónde está el margen de maniobra: 333 parches de buena aptitud agrológica hoy sin uso, y una infraestructura verde protegida que puede servir de base real, no solo simbólica, para cualquier estrategia de recuperación.</p>
-  <p>La fragmentación parcelaria (más de 6.400 parcelas, casi la mitad por debajo de 0,1 hectáreas) y los 25 focos de uso incompatible detectados dentro de zonas protegidas marcan los puntos donde la planificación tiene trabajo pendiente: no como advertencia genérica, sino como localización concreta, verificable capa a capa. La síntesis cruzada de los cuatro índices espectrales confirma que el cambio más relevante no está disperso, sino concentrado en un corredor identificable del concejo, lo que convierte esta lectura en una herramienta de priorización y no solo de constatación.</p>
-  <p>En conjunto, el concejo conserva una base territorial con margen de recuperación real si se actúa sobre las zonas ya señaladas, antes de que la tendencia observada entre 2018 y 2026 se consolide.</p>
-  <p>Este conjunto de mapas y datos no es un punto final, sino la base de trabajo: a partir de él, TERRA SISTEMA construye el análisis DAFO y CAME del concejo y un informe técnico en PDF centrado en las necesidades reales del territorio y en las líneas de actuación prioritarias que se derivan del diagnóstico. Todo el proceso está supervisado por mí, graduada en Historia por la Universidad de Oviedo y Máster en Recursos Territoriales y Estrategias de Ordenación (Universidad de Oviedo / Universidad de Cantabria), lo que garantiza que cada resultado se contrasta con criterio experto antes de llegar al informe final.</p>
-</section>
-<div style="max-width: 200px; margin: 8px auto 0; text-align: center; color: #c3aa7c; font-size: 20px;">❦</div>
-<section id="contacto" style="max-width: 1100px; margin: 0 auto; padding: 36px 24px 48px; text-align: center;">
-  <h2 class="rd-h2" style="font-size: 26px; margin: 0 0 14px;">¿Te interesa este mismo análisis para tu municipio?</h2>
-  <p style="max-width: 720px; margin: 0 auto 20px; text-align: center;">Este diagnóstico se ha elaborado con TERRA SISTEMA, una herramienta propia que puede aplicarse a cualquier municipio de España a partir de sus fuentes oficiales de datos geoespaciales. Si te interesa un análisis similar para tu concejo o quieres hablar sobre cómo puede encajar en tu proyecto, escríbeme.</p>
-  <p style="margin: 0; font-size: 20px; text-align: center;">📧 <a href="mailto:npameladiazcolodrero@gmail.com" style="color: #6b5a45;">npameladiazcolodrero@gmail.com</a></p>
-  <p style="margin: 6px 0 0; font-size: 20px; text-align: center;">📞 +34 603 852 497</p>
-</section>
-<footer style="max-width: 1100px; margin: 0 auto; padding: 0 24px 56px; text-align: center; font-size: 13.5px; color: #6b5a45; opacity: 0.85;">
-  <div style="width: 60px; height: 1px; background: #c3aa7c; margin: 0 auto 18px;"></div>
-  Fuentes: IGN/IDEE, IGME, SIOSE, Dirección General del Catastro, MITECO, SITPA-IDEAS del Principado de Asturias, Copernicus/Sentinel-2 (ESA), Nomenclátor IGN/CNIG.
-</footer>
-
+<div class="gh-page-frame">
+<div class="gh-wrap" style="padding-top: var(--space-6);">
+  <nav class="nav">
+    <img src="assets/logo-ghistora.jpg" alt="Logo GHistora" style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--gh-purple); object-fit: cover;">
+    <span class="nav-brand" style="font-size: 52px;">GHistora</span>
+    <a href="#servicios">Servicios</a>
+    <a href="#metodo">Metodología</a>
+    <a href="#packs">Encargos</a>
+    <a href="#caso">Caso real</a>
+    <a href="#quien">Quién soy</a>
+    <a class="btn btn-primary" href="#contacto">Hablemos</a>
+  </nav>
 </div>
 
-</x-dc>
+<!-- HERO -->
+<div class="gh-wrap" style="padding-right: clamp(8px, 1.5vw, 20px); max-width: 1250px;">
+  <section class="gh-section" style="display: grid; gap: var(--space-8); align-items: center; grid-template-columns: minmax(0,1fr);" id="gh-hero">
+    <div class="gh-grid" style="grid-template-columns: minmax(0,1fr); align-items: center; margin-top: 0;">
+      <style>@media (min-width: 640px) { #gh-hero-inner { grid-template-columns: minmax(0,0.9fr) minmax(0,0.75fr) minmax(0,0.85fr) !important; } }</style>
+      <div id="gh-hero-inner" style="display:grid; gap: var(--space-6); grid-template-columns: minmax(0,1fr); align-items: center;">
+      <div>
+        <span class="gh-kicker">GHistora — Consultoría Territorial</span>
+        <h1 style="font-family: var(--font-heading); font-weight: 400; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.2; color: var(--color-text); margin: 0 0 var(--space-6);">Antes de tomar una decisión sobre el territorio, hay que entenderlo.</h1>
+        <div style="display: grid; gap: var(--space-2); margin-bottom: var(--space-6);">
+          <p style="font-family: var(--font-heading); font-size: 21px; color: var(--color-text); margin: 0;">→ Entender el territorio</p>
+          <p style="font-family: var(--font-heading); font-size: 21px; color: var(--color-text); margin: 0;">→ Detectar qué está cambiando</p>
+          <p style="font-family: var(--font-heading); font-size: 21px; color: var(--color-text); margin: 0;">→ Analizar riesgos y oportunidades</p>
+          <p style="font-family: var(--font-heading); font-size: 21px; color: var(--color-text); margin: 0;">→ Convertir los datos en estrategia</p>
+        </div>
+        <a class="btn btn-primary" href="#contacto">Hablemos</a>
+      </div>
+      <figure class="plate gh-plate" style="margin: 0; background: #e9e1cd;">
+        <img src="assets/mapa-proaza-1952.png" alt="Mapa topográfico histórico de Proaza, hoja 52, Provincia de Oviedo" style="width: 100%; height: auto; display: block; object-fit: contain;">
+      </figure>
+      <figure class="plate gh-plate" style="margin: 0; justify-self: center; width: 100%; max-width: 300px;">
+        <img src="assets/diagrama-capas.png" alt="Diagrama de capas de análisis territorial: parcelas, zonificación, riesgos, teledetección, usos del suelo y mapa base" style="width: 100%; display: block;">
+      </figure>
+      </div>
+    </div>
+  </section>
+</div>
+
+<hr class="hr">
+
+<!-- INTRO -->
+<div class="gh-wrap">
+  <header class="gh-section">
+    <span class="gh-kicker">Diagnósticos territoriales con base científica y lectura de experto</span>
+    <h2 class="gh-h2" style="font-size: 34px;">Leemos el territorio para poder decidir con y sobre datos</h2>
+    <p class="gh-cap">Delimitación, usos del suelo, riesgos, accesibilidad y cambio real sobre el terreno</p>
+    <p class="gh-p">Convertimos las fuentes oficiales — IGN, IGME, SIOSE, Catastro, MITECO, Copernicus/Sentinel-2 — en diagnósticos territoriales claros, verificables y útiles para ayuntamientos, despachos de arquitectura y paisaje, gestores forestales y proyectos de desarrollo rural. Cada capa se adapta al uso que le vas a dar, ya sea justificar una decisión urbanística, seguir la evolución de un proyecto o documentar una solicitud ante la administración. Y cada resultado se supervisa con criterio de especialista antes de llegar al informe final.</p>
+  </header>
+</div>
+
+<!-- SERVICIOS -->
+<div class="gh-wrap">
+  <section class="gh-section" id="servicios">
+    <h2 class="gh-h2">Servicios</h2>
+    <div class="gh-grid gh-grid-3">
+      <div class="card">
+        <div class="card-title">Diagnóstico territorial integral</div>
+        <p class="card-body">Retrato cartográfico completo de un municipio o comarca: localización, relieve, geología, usos del suelo, población, parcelario, red viaria y zonas protegidas. La capa base sobre la que apoyar cualquier planificación.</p>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-1-situacion.png" alt="Mapa de situación y localización territorial"></figure>
+      </div>
+      <div class="card">
+        <div class="card-title">Teledetección y cambio de cobertura</div>
+        <p class="card-body">Detección de cambios reales entre dos fechas con índices espectrales (NDVI, NDWI, NDBI, NBR) sobre Sentinel-2: pérdida o ganancia de vegetación, suelo construido nuevo, humedad y severidad de quemas, con umbrales explícitos y síntesis cruzada.</p>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-2-teledeteccion.png" alt="Índices NDVI, NDWI, NDBI y NBR con detección de cambios"></figure>
+      </div>
+      <div class="card">
+        <div class="card-title">Visores cartográficos interactivos</div>
+        <p class="card-body">Geoportales listos para publicar en la web de tu ayuntamiento o proyecto: capas activables, consulta de atributos, exportación del mapa a PNG/PDF con escala, leyenda y norte. Sin software SIG que instalar, cruzando incluso capas propias como el SIGPAC frente al NDVI para detectar discrepancias parcela a parcela. También creamos visores a medida de tu territorio, con las capas y funciones que necesites: un archivo HTML autónomo, sin instalación ni conocimientos de SIG, pensado para que un ayuntamiento pequeño pueda consultar y gestionar su propia información territorial.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin-top: var(--space-4);">
+          <figure class="plate gh-plate" style="margin: 0;"><img src="assets/servicio-3-visor-riosa.png" alt="Geoportal analítico TERRA de la parroquia de Riosa con discrepancias SIGPAC frente a NDVI"></figure>
+          <figure class="plate gh-plate" style="margin: 0;"><img src="assets/servicio-3-visor-riosa-detalle.png" alt="Detalle ampliado del visor con discrepancias SIGPAC frente a NDVI"></figure>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Riesgos y medio natural</div>
+        <p class="card-body">Inundabilidad oficial (SNCZI) cruzada con los usos del suelo reales, para saber qué hay expuesto y no solo dónde llega el agua.</p>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/caso-visor-ribera.png" alt="Inundabilidad SNCZI y usos del suelo en Ribera de Arriba"></figure>
+        <p class="card-body" style="margin-top: var(--space-4);">Discrepancias entre el uso declarado y el uso real detectado por teledetección, localizadas dentro de zonas protegidas.</p>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/caso-conflictos-uso.png" alt="Discrepancias de uso del suelo dentro de zonas protegidas en Ribera de Arriba"></figure>
+        <p class="card-body" style="margin-top: var(--space-4);">Litología oficial (IGME) para valorar la aptitud del terreno frente a deslizamientos, y el mapa de movimientos del terreno a escala regional que sitúa el municipio en su contexto de riesgo.</p>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-4-geologia.png" alt="Mapa geológico de Ribera de Arriba"></figure>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-4-mterreno.png" alt="Movimientos del terreno IGME en Ribera de Arriba"></figure>
+      </div>
+      <div class="card">
+        <div class="card-title">Accesibilidad y análisis de red</div>
+        <p class="card-body">Isócronas reales calculadas sobre la red viaria oficial — no en línea recta — para planificar servicios, emergencias o ubicaciones: tiempos de acceso desde y hacia cualquier núcleo.</p>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-5-accesibilidad.png" alt="Red viaria e isócronas de accesibilidad"></figure>
+      </div>
+      <div class="card">
+        <div class="card-title">Informes técnicos y estrategia</div>
+        <p class="card-body">Del mapa a la decisión: primero se cierra el diagnóstico del suelo — conflictos de uso, aptitud agraria, abandono y fragmentación parcelaria — con cifras concretas por municipio.</p>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-4-riesgos.png" alt="Diagnóstico del suelo: conflictos de uso en zonas protegidas y aptitud agraria"></figure>
+        <p class="card-body" style="margin-top: var(--space-4);">Después, ese diagnóstico se traduce en análisis DAFO y CAME y en un informe técnico en PDF centrado en las líneas de actuación prioritarias.</p>
+        <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-6-informe.png" alt="Síntesis del diagnóstico: análisis DAFO"></figure>
+      </div>
+    </div>
+  </section>
+</div>
+
+<hr class="hr">
+
+<!-- METODOLOGÍA -->
+<div class="gh-wrap">
+  <section class="gh-section" id="metodo">
+    <h2 class="gh-h2">Metodología: TERRA SISTEMA</h2>
+    <p class="gh-p">Cada encargo se procesa con <strong>TERRA SISTEMA</strong>, una herramienta propia de análisis geoespacial, aplicable a cualquier municipio de España a partir de sus fuentes oficiales. El flujo de trabajo es siempre el mismo, y siempre auditable:</p>
+    <div class="gh-grid gh-grid-3">
+      <div class="card gh-purple-card"><div class="card-title">1 · Delimitación</div><p class="card-body">Fijación del territorio de estudio y reunión de capas base oficiales: límites administrativos, MDT LIDAR, cartografía topográfica y marco de referencia explícito.</p></div>
+      <div class="card gh-purple-card"><div class="card-title">2 · Procesamiento</div><p class="card-body">Álgebra de bandas sobre imágenes satélite, cruces vectoriales reales entre capas, cálculos de accesibilidad sobre red viaria y detección de cambios con umbrales definidos.</p></div>
+      <div class="card gh-purple-card"><div class="card-title">3 · Supervisión experta</div><p class="card-body">Ningún resultado sale sin contraste humano: cada mapa se revisa a pie de trabajo y se documenta con fuente, fecha, sistema de referencia y criterio técnico.</p></div>
+    </div>
+    <div class="card" style="margin-top: var(--space-6);">
+      <p class="card-body" style="text-align: center;">Los escenarios que se entregan son proyecciones cualitativas bajo hipótesis explícitas y siempre documentadas: la claridad sobre los límites del análisis forma parte del rigor técnico de cada encargo.</p>
+    </div>
+  </section>
+</div>
+
+<hr class="hr">
+
+<!-- PACKS -->
+<div class="gh-wrap">
+  <section class="gh-section" id="packs">
+    <h2 class="gh-h2">Qué tipos de análisis hacemos</h2>
+    <div class="gh-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+      
+      
+        <div class="card gh-purple-card">
+          <div class="card-title">Diagnóstico esencial</div>
+          <p class="card-body">Contexto y localización, relieve, usos del suelo y red viaria. Mapas temáticos en alta resolución e informe resumen en PDF.</p>
+          <p class="card-meta">Presupuesto a medida según extensión</p>
+        </div>
+      
+      
+        <div class="card gh-purple-card" style="border-color: var(--gh-purple);">
+          <span style="margin-bottom: var(--space-3); display: inline-flex; width: fit-content; padding: 3px 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-sm); color: var(--gh-purple); border: 1px solid var(--gh-purple); background: var(--gh-purple-tint);">Más solicitado</span>
+          <div class="card-title">Diagnóstico completo</div>
+          <p class="card-body">Todo lo anterior más geología, parcelario, accesibilidad real, zonas protegidas, teledetección de cambios 2018–2026 y síntesis cruzada. Incluye visor interactivo publicable y análisis DAFO/CAME.</p>
+          <p class="card-meta">El encargo más solicitado</p>
+        </div>
+      
+      
+      
+      
+        <div class="card gh-purple-card">
+          <div class="card-title">Servicio continuo</div>
+          <p class="card-body">Seguimiento temporal de tu territorio: actualización anual de cambios de cobertura, alertas de nuevos suelos construidos y mantenimiento del geoportal municipal.</p>
+          <p class="card-meta">Cuota anual</p>
+        </div>
+      
+      <div class="card gh-purple-card">
+        <div class="card-title">Memorias técnicas para subvenciones</div>
+        <p class="card-body">Documentación técnica y cartográfica para solicitar ayudas de restauración, mantenimiento o rehabilitación del patrimonio: memorias valoradas, fichas de catalogación y estado de conservación.</p>
+        <p class="card-meta">Presupuesto según convocatoria</p>
+      </div>
+    </div>
+    <p style="text-align: center; margin: var(--space-6) 0 0;"><a class="btn btn-primary" href="#contacto">Pide tu presupuesto sin compromiso</a></p>
+  </section>
+</div>
+
+<hr class="hr">
+
+<!-- CASO REAL -->
+<div class="gh-wrap">
+  <section class="gh-section" id="caso">
+    <h2 class="gh-h2">Un caso real: Ribera de Arriba</h2>
+    <p class="gh-p">Este es el trabajo que se puede ver completo en nuestro portfolio cartográfico: un retrato territorial del concejo asturiano de Ribera de Arriba que combinó fuentes oficiales con procesamiento propio. Algunos resultados, en cifras:</p>
+    <div class="gh-grid gh-grid-3">
+      <div class="card gh-purple-card" style="text-align: center;">
+        <p class="gh-purple-num" style="font-family: var(--font-heading); font-weight: 400; font-size: 44px; font-feature-settings: 'tnum' 1; margin: 0;">24,7%</p>
+        <p class="card-body" style="text-align: center;">de la superficie con señal de pérdida de vegetación leñosa entre 2018 y 2026 (NBR)</p>
+      </div>
+      <div class="card gh-purple-card" style="text-align: center;">
+        <p class="gh-purple-num" style="font-family: var(--font-heading); font-weight: 400; font-size: 44px; font-feature-settings: 'tnum' 1; margin: 0;">6.418</p>
+        <p class="card-body" style="text-align: center;">parcelas catastrales analizadas: casi la mitad, por debajo de 0,1 hectáreas</p>
+      </div>
+      <div class="card gh-purple-card" style="text-align: center;">
+        <p class="gh-purple-num" style="font-family: var(--font-heading); font-weight: 400; font-size: 44px; font-feature-settings: 'tnum' 1; margin: 0;">25</p>
+        <p class="card-body" style="text-align: center;">focos de uso incompatible localizados dentro de zonas protegidas</p>
+      </div>
+    </div>
+    <p class="gh-p" style="margin-top: var(--space-6);">Del diagnóstico se derivaron tres escenarios cualitativos — óptimo, tendencial y de riesgo — y las líneas de actuación prioritarias para un concejo que conserva, aún, un margen real de recuperación.</p>
+    <div class="gh-grid gh-grid-2" style="margin-top: var(--space-6);">
+      <figure class="plate gh-plate" style="margin: 0;"><img src="assets/caso-relieve.png" alt="Relieve del territorio de Ribera de Arriba"></figure>
+      <figure class="plate gh-plate" style="margin: 0;"><img src="assets/caso-curvas-nivel.png" alt="Curvas de nivel de Ribera de Arriba"></figure>
+      <figure class="plate gh-plate" style="margin: 0;"><img src="assets/caso-parcelario.png" alt="Fragmentación parcelaria catastral de Ribera de Arriba"></figure>
+      <figure class="plate gh-plate" style="margin: 0;"><img src="assets/caso-cambios-nbr.png" alt="Detección de cambios NBR 2018-2026 en Ribera de Arriba"></figure>
+    </div>
+    <p style="text-align: center; margin: var(--space-6) 0 0;"><a class="btn btn-secondary" href="https://ghistora-consultoria.github.io/PORTFOLIO-CARTOGRAFICO/" target="_blank" rel="noopener">Ver un ejemplo completo</a></p>
+  </section>
+</div>
+
+<hr class="hr">
+
+<!-- QUIÉN SOY -->
+<div class="gh-wrap">
+  <section class="gh-section" id="quien">
+    <h2 class="gh-h2">Quién está detrás del mapa</h2>
+    <div style="display: grid; gap: var(--space-6); grid-template-columns: minmax(0,220px) minmax(0,1fr); align-items: start;">
+      <figure class="plate gh-plate" style="margin: 0; position: relative; z-index: 1; background: var(--color-bg);"><img src="assets/foto-nelida.png" alt="Nélida Pamela Díaz Colodrero" style="aspect-ratio: 3/4; object-fit: cover;"></figure>
+      <p class="gh-p">GHistora Consultoría Territorial está dirigida por <strong>Nélida Pamela Díaz Colodrero</strong>, graduada en Historia por la Universidad de Oviedo y máster en Recursos Territoriales y Estrategias de Ordenación (Universidad de Oviedo / Universidad de Cantabria). El estudio nace de unir dos miradas: la del territorio leído en el tiempo, propia de la historia, y la del territorio medido con precisión, propia de los sistemas de información geográfica. Esa doble lectura hace que cada entregable esté contrastado con criterio experto, capa por capa, antes de llegar al cliente.</p>
+    </div>
+    <p class="gh-cap" style="text-align: center; margin-top: var(--space-6);">Historia y territorio, leídos con el mismo rigor.</p>
+  </section>
+</div>
+
+<hr class="hr">
+
+<!-- CONTACTO -->
+<div class="gh-wrap">
+  <section class="gh-section" id="contacto" style="text-align: center;">
+    <h2 class="gh-h2" style="text-align: center;">Hablemos de tu concejo</h2>
+    <p class="gh-p" style="text-align: center; max-width: 640px; margin: 0 auto;">TERRA SISTEMA puede aplicarse a cualquier municipio de España. Cuéntanos qué territorio quieres entender y para qué decisión lo necesitas, y prepararemos una propuesta con plazos y presupuesto cerrados.</p>
+    <p style="margin: var(--space-6) 0 var(--space-2); font-size: 21px;"><a href="mailto:ghistora@gmail.com">ghistora@gmail.com</a></p>
+    <p style="margin: 0 0 var(--space-2); font-size: 21px;"><a href="mailto:npameladiazcolodrero@gmail.com">npameladiazcolodrero@gmail.com</a></p>
+    <p><a href="https://ghistora-consultoria.github.io/PORTFOLIO-CARTOGRAFICO/" target="_blank" rel="noopener" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--color-divider); padding-bottom: 2px;">Ver un ejemplo completo ↗</a></p>
+  </section>
+</div>
+
+<div class="gh-wrap">
+  <footer style="padding: var(--space-4) 0 var(--space-8); text-align: center; font-size: 13.5px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">
+    GHistora Consultoría Territorial — Nélida Pamela Díaz Colodrero · Asturias, España<br>
+    Fuentes habituales: IGN/IDEE, IGME, SIOSE, Dirección General del Catastro, MITECO, SITPA-IDEAS, Copernicus/Sentinel-2 (ESA), Nomenclátor IGN/CNIG.
+  </footer>
+</div>
+</div>
+
+<script>
+(function () {
+  var overlay = document.createElement("div");
+  overlay.style.cssText = "position:fixed;inset:0;background:rgba(20,18,16,0.85);display:flex;align-items:center;justify-content:center;padding:40px;z-index:9999;opacity:0;pointer-events:none;transition:opacity 0.25s ease;cursor:zoom-out;";
+  var img = document.createElement("img");
+  img.style.cssText = "max-width:100%;max-height:100%;box-shadow:0 0 0 2px #b68235,0 0 0 4px oklch(46% 0.09 306);";
+  overlay.appendChild(img);
+  document.body.appendChild(overlay);
+  function close() { overlay.style.opacity = "0"; overlay.style.pointerEvents = "none"; }
+  overlay.addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest(".gh-plate img");
+    if (!el) return;
+    img.src = el.src;
+    img.alt = el.alt;
+    overlay.style.opacity = "1";
+    overlay.style.pointerEvents = "auto";
+  });
+  document.querySelectorAll(".gh-plate img").forEach(function (el) { el.style.cursor = "zoom-in"; });
+})();
+</script>
 </body>
 </html>
