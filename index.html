@@ -42,7 +42,7 @@
     background-size: auto, 900px;
     background-repeat: repeat, repeat;
   }
-  .gh-page-frame { margin: 32px; box-shadow: inset 0 0 0 2px var(--color-accent-700), inset 0 0 0 4px var(--gh-purple); min-height: calc(100vh - 64px); }
+  .gh-page-frame { position: relative; margin: 32px; box-shadow: inset 0 0 0 2px var(--color-accent-700), inset 0 0 0 4px var(--gh-purple); min-height: calc(100vh - 64px); background-image: linear-gradient(rgba(250,240,215,0.93), rgba(250,240,215,0.93)), url('assets/fondo-relieve.jpg'); background-size: cover; background-position: center top; background-attachment: fixed; }
   a { color: var(--color-accent-700); text-decoration: none; }
   a:hover { color: var(--color-accent); }
   .gh-wrap { max-width: 1100px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
@@ -65,49 +65,72 @@
   :root { --gh-purple: oklch(46% 0.09 306); --gh-purple-tint: oklch(46% 0.09 306 / 0.08); }
   .gh-purple-card { border-top: 3px solid var(--gh-purple); }
   .gh-purple-num { color: var(--gh-purple) !important; }
+  .gh-h2 { position: relative; padding-bottom: var(--space-3); }
+  .gh-h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 64px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--color-accent-700), var(--gh-purple)); }
+  .card-title { font-size: 20px !important; font-weight: 700 !important; margin-bottom: 4px; }
+  .gh-starry { background: linear-gradient(180deg, #0a1628 0%, #16233f 100%); }
+  .gh-starry .gh-h2 { color: #f3f2f2; }
+  .gh-starry .gh-p, .gh-starry .card-body, .gh-starry .gh-cap { color: #d8d4c8; }
+  .gh-starry .card-title { color: #f3f2f2; }
+  .gh-starry .card { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.05); }
+  .gh-starry .gh-kicker { color: var(--color-accent-300); }
+  .gh-starry .quote-block { color: #e6e2d8; }
+  @keyframes gh-marker-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220,38,38,0.55); }
+    50% { transform: scale(1.18); box-shadow: 0 0 0 12px rgba(220,38,38,0); }
+  }
+  .gh-marker-pulse { animation: gh-marker-pulse 1.6s ease-in-out infinite; }
+  .gh-row-interactive { transition: transform 0.25s ease, box-shadow 0.25s ease; cursor: default; }
+  .gh-row-interactive:hover { transform: translateY(-4px) scale(1.01); box-shadow: var(--shadow-md); }
+  .gh-starry .card-meta { color: #a8b0c4; }
+  .gh-starry .gh-purple-num { color: #ffffff !important; text-shadow: 0 0 10px rgba(201,182,245,0.9), 0 0 2px rgba(255,255,255,0.9); }
+  @keyframes gh-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  .gh-blink-link { animation: gh-blink 1.8s ease-in-out infinite; }
 </style>
 </head>
 <body>
 <div class="gh-page-frame">
-<div class="gh-wrap" style="padding-top: var(--space-6);">
-  <nav class="nav">
-    <img src="assets/logo-ghistora.jpg" alt="Logo GHistora" style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--gh-purple); object-fit: cover;">
-    <span class="nav-brand" style="font-size: 52px;">GHistora</span>
-    <a href="#servicios">Servicios</a>
-    <a href="#metodo">Metodología</a>
-    <a href="#packs">Encargos</a>
-    <a href="#caso">Caso real</a>
-    <a href="#quien">Quién soy</a>
-    <a class="btn btn-primary" href="#contacto">Hablemos</a>
+<div style="position: sticky; top: 0; z-index: 50; background: var(--color-bg); box-shadow: 0 1px 0 var(--color-divider);">
+  <nav class="nav" style="border-bottom: none; padding: var(--space-3) clamp(16px, 3vw, 40px); justify-content: space-between; overflow-x: auto;">
+    <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+      <img src="assets/logo-ghistora.jpg" alt="Logo GHistora" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--gh-purple); object-fit: cover;">
+      <span class="nav-brand" style="font-size: 36px; white-space: nowrap; margin: 0 0 0 4px;">GHistora</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: var(--space-4); flex-shrink: 0;">
+      <a href="#gh-hero" style="white-space: nowrap;">Inicio</a>
+      <a href="#servicios" style="white-space: nowrap;">Servicios</a>
+      <a href="#metodo" style="white-space: nowrap;">Metodología</a>
+      <a href="#packs" style="white-space: nowrap;">Encargos</a>
+      <a href="#caso" style="white-space: nowrap;">Caso real</a>
+      <a href="#quien" style="white-space: nowrap;">Quién soy</a>
+      <a class="btn btn-primary" href="#contacto" style="white-space: nowrap;">Hablemos</a>
+    </div>
   </nav>
 </div>
 
 <!-- HERO -->
-<div class="gh-wrap" style="padding-right: clamp(8px, 1.5vw, 20px); max-width: 1250px;">
-  <section class="gh-section" style="display: grid; gap: var(--space-8); align-items: center; grid-template-columns: minmax(0,1fr);" id="gh-hero">
-    <div class="gh-grid" style="grid-template-columns: minmax(0,1fr); align-items: center; margin-top: 0;">
-      <style>@media (min-width: 640px) { #gh-hero-inner { grid-template-columns: minmax(0,0.9fr) minmax(0,0.75fr) minmax(0,0.85fr) !important; } }</style>
-      <div id="gh-hero-inner" style="display:grid; gap: var(--space-6); grid-template-columns: minmax(0,1fr); align-items: center;">
-      <div>
-        <span class="gh-kicker">GHistora — Consultoría Territorial</span>
-        <h1 style="font-family: var(--font-heading); font-weight: 400; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.2; color: var(--color-text); margin: 0 0 var(--space-6);">Antes de tomar una decisión sobre el territorio, hay que entenderlo.</h1>
+<div id="gh-hero-sky" style="position: relative; overflow: hidden; background: linear-gradient(180deg, #0a1628 0%, #14213d 55%, #1e2e4f 100%); min-height: 640px;">
+<canvas id="gh-hero-starfield" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
+<div id="gh-globe" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;"></div>
+<div style="position: relative; z-index: 2; padding: var(--space-8) 0; pointer-events: none;">
+<div style="max-width: 100%; margin: 0; padding: 0 clamp(8px, 1.5vw, 24px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-8);" id="gh-hero">
+      <div style="max-width: 560px; pointer-events: auto; margin-right: auto;">
+        <span class="gh-kicker" style="color: var(--color-accent-300);">GHistora — Consultoría Territorial</span>
+        <h1 style="font-family: var(--font-heading); font-weight: 400; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.18; color: #f3f2f2; margin: 0 0 var(--space-6);">Antes de tomar una decisión sobre el territorio, hay que entenderlo.</h1>
         <div style="display: grid; gap: var(--space-2); margin-bottom: var(--space-6);">
-          <p style="font-family: var(--font-heading); font-size: 21px; color: var(--color-text); margin: 0;">→ Entender el territorio</p>
-          <p style="font-family: var(--font-heading); font-size: 21px; color: var(--color-text); margin: 0;">→ Detectar qué está cambiando</p>
-          <p style="font-family: var(--font-heading); font-size: 21px; color: var(--color-text); margin: 0;">→ Analizar riesgos y oportunidades</p>
-          <p style="font-family: var(--font-heading); font-size: 21px; color: var(--color-text); margin: 0;">→ Convertir los datos en estrategia</p>
+          <p style="font-family: var(--font-heading); font-size: 27px; color: #e2ddd3; margin: 0;">→ Entender el territorio</p>
+          <p style="font-family: var(--font-heading); font-size: 27px; color: #e2ddd3; margin: 0;">→ Detectar qué está cambiando</p>
+          <p style="font-family: var(--font-heading); font-size: 27px; color: #e2ddd3; margin: 0;">→ Analizar riesgos y oportunidades</p>
+          <p style="font-family: var(--font-heading); font-size: 27px; color: #e2ddd3; margin: 0;">→ Convertir los datos en estrategia</p>
         </div>
         <a class="btn btn-primary" href="#contacto">Hablemos</a>
       </div>
-      <figure class="plate gh-plate" style="margin: 0; background: #e9e1cd;">
+      <figure class="plate gh-plate" style="margin: 0 0 0 auto; background: #e9e1cd; max-width: 600px; width: 100%; box-shadow: 0 8px 30px rgba(0,0,0,0.4); pointer-events: auto;">
         <img src="assets/mapa-proaza-1952.jpg" alt="Mapa topográfico histórico de Proaza, hoja 52, Provincia de Oviedo" style="width: 100%; height: auto; display: block; object-fit: contain;">
       </figure>
-      <figure class="plate gh-plate" style="margin: 0; justify-self: center; width: 100%; max-width: 300px;">
-        <img src="assets/diagrama-capas.png" alt="Diagrama de capas de análisis territorial: parcelas, zonificación, riesgos, teledetección, usos del suelo y mapa base" style="width: 100%; display: block;">
-      </figure>
-      </div>
-    </div>
-  </section>
+</div>
+<p style="text-align: center; margin: var(--space-8) 0 0; font-family: var(--font-body); font-style: italic; color: #cfd6e8;">El territorio, visto desde cualquier ángulo — arrastra para girar</p>
+</div>
 </div>
 
 <hr class="hr">
@@ -119,34 +142,89 @@
     <h2 class="gh-h2" style="font-size: 34px;">Leemos el territorio para poder decidir con y sobre datos</h2>
     <p class="gh-cap">Delimitación, usos del suelo, riesgos, accesibilidad y cambio real sobre el terreno</p>
     <p class="gh-p">Convertimos las fuentes oficiales — IGN, IGME, SIOSE, Catastro, MITECO, Copernicus/Sentinel-2 — en diagnósticos territoriales claros, verificables y útiles para ayuntamientos, despachos de arquitectura y paisaje, gestores forestales y proyectos de desarrollo rural. Cada capa se adapta al uso que le vas a dar, ya sea justificar una decisión urbanística, seguir la evolución de un proyecto o documentar una solicitud ante la administración. Y cada resultado se supervisa con criterio de especialista antes de llegar al informe final.</p>
+    <p class="gh-p" style="margin-top: var(--space-4);">Trabajamos también a escala <strong>inframunicipal</strong> — parroquias, aldeas y núcleos concretos — un nivel de detalle que rara vez se analiza para territorios pequeños, aunque sea donde de verdad se toman las decisiones del día a día. Son precisamente los ayuntamientos con menos recursos quienes más ganan con esto: les da las mismas herramientas de decisión que hoy solo suelen tener los territorios grandes.</p>
+    <div class="gh-grid gh-grid-3" style="margin-top: var(--space-6); align-items: start;">
+      <div style="padding: 10px; border: 2px solid var(--gh-purple); border-radius: var(--radius-md);">
+        <figure class="plate gh-plate" style="margin: 0; aspect-ratio: 4/3; overflow: hidden;">
+          <img src="assets/geoportal-relieve-3d-ribera.jpg" alt="Relieve 3D del territorio de Ribera de Arriba en el geoportal TERRA" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+        </figure>
+        <p class="gh-cap" style="text-align: center; margin: var(--space-3) 0 0; font-size: 14px;">Geoportal TERRA: relieve 3D navegable de Ribera de Arriba</p>
+      </div>
+      <div style="padding: 10px; border: 2px solid var(--gh-purple); border-radius: var(--radius-md);">
+        <figure class="plate gh-plate" style="margin: 0; aspect-ratio: 4/3; overflow: hidden;">
+          <img src="assets/diagrama-capas.png" alt="Diagrama de capas de análisis territorial: parcelas, zonificación, riesgos, teledetección, usos del suelo y mapa base" style="width: 100%; height: 100%; object-fit: contain; background: #fff;">
+        </figure>
+        <p class="gh-cap" style="text-align: center; margin: var(--space-3) 0 0; font-size: 14px;">Cada análisis se construye capa a capa, sobre fuentes oficiales</p>
+      </div>
+      <div style="padding: 10px; border: 2px solid var(--gh-purple); border-radius: var(--radius-md);">
+        <figure class="plate gh-plate" style="margin: 0; aspect-ratio: 4/3; overflow: hidden;">
+          <img src="assets/mapa-orlle-caso.jpg" alt="Mapa de la parroquia de Orllé, concejo de Caso, Asturias" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+        </figure>
+        <p class="gh-cap" style="text-align: center; margin: var(--space-3) 0 0; font-size: 14px;">Detalle a escala parroquial: Orllé, concejo de Caso — el nivel que casi nunca se analiza</p>
+      </div>
+    </div>
   </header>
 </div>
+
+<!-- LO QUE HACEMOS -->
+<div class="gh-starry">
+<div class="gh-wrap">
+  <section class="gh-section" id="lo-que-hacemos">
+    <h2 class="gh-h2">El territorio como palimpsesto</h2>
+    <p class="gh-cap">Cada época escribe sobre la anterior, sin borrarla del todo — leemos esas capas</p>
+    <div style="display:flex; flex-direction:column;">
+      <div class="gh-row-interactive" style="display:flex; gap:var(--space-4); padding:var(--space-4); border-radius:var(--radius-md); margin-bottom:var(--space-3); background:rgba(230,163,74,0.14); border-left:4px solid var(--color-accent-500);">
+        <span style="font-size:26px; flex-shrink:0;" aria-hidden="true">🗺️</span>
+        <div><p class="card-title" style="margin:0 0 4px;">Cartografía territorial</p><p class="gh-p" style="text-align:left; font-size:16px;">Mapas propios, hechos a medida de cada concejo, cuando lo genérico no basta.</p></div>
+      </div>
+      <div class="gh-row-interactive" style="display:flex; gap:var(--space-4); padding:var(--space-4); border-radius:var(--radius-md); margin-bottom:var(--space-3); background:rgba(159,140,201,0.16); border-left:4px solid var(--gh-purple);">
+        <span style="font-size:26px; flex-shrink:0;" aria-hidden="true">🌱</span>
+        <div><p class="card-title" style="margin:0 0 4px;">Lectura del paisaje</p><p class="gh-p" style="text-align:left; font-size:16px;">Cambios de uso del suelo, vegetación, índices territoriales, abandono agrario y discrepancias entre lo declarado y lo real.</p></div>
+      </div>
+      <div class="gh-row-interactive" style="display:flex; gap:var(--space-4); padding:var(--space-4); border-radius:var(--radius-md); margin-bottom:var(--space-3); background:rgba(230,163,74,0.14); border-left:4px solid var(--color-accent-500);">
+        <span style="font-size:26px; flex-shrink:0;" aria-hidden="true">🗂️</span>
+        <div><p class="card-title" style="margin:0 0 4px;">SIG e inventarios</p><p class="gh-p" style="text-align:left; font-size:16px;">Organizamos catastro, capas geográficas y patrimonio en sistemas que se pueden consultar y cruzar.</p></div>
+      </div>
+      <div class="gh-row-interactive" style="display:flex; gap:var(--space-4); padding:var(--space-4); border-radius:var(--radius-md); margin-bottom:var(--space-3); background:rgba(159,140,201,0.16); border-left:4px solid var(--gh-purple);">
+        <span style="font-size:26px; flex-shrink:0;" aria-hidden="true">🏛️</span>
+        <div><p class="card-title" style="margin:0 0 4px;">Patrimonio y memoria</p><p class="gh-p" style="text-align:left; font-size:16px;">Ponemos en valor lo que el territorio guarda: hórreos, caminos, huellas de otro tiempo.</p></div>
+      </div>
+      <div class="gh-row-interactive" style="display:flex; gap:var(--space-4); padding:var(--space-4); border-radius:var(--radius-md); background:rgba(230,163,74,0.14); border-left:4px solid var(--color-accent-500);">
+        <span style="font-size:26px; flex-shrink:0;" aria-hidden="true">🧭</span>
+        <div><p class="card-title" style="margin:0 0 4px;">Turismo y divulgación</p><p class="gh-p" style="text-align:left; font-size:16px;">Mapas temáticos para dar a conocer el territorio y ponerlo al alcance de quien lo visita.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<hr class="hr">
 
 <!-- SERVICIOS -->
 <div class="gh-wrap">
   <section class="gh-section" id="servicios">
     <h2 class="gh-h2">Servicios</h2>
     <div class="gh-grid gh-grid-3">
-      <div class="card">
-        <div class="card-title">Diagnóstico territorial integral</div>
+      <div class="card" style="border-top:3px solid var(--color-accent-700);">
+        <div class="card-title">🗺️ Diagnóstico territorial integral</div>
         <p class="card-body">Retrato cartográfico completo de un municipio o comarca: localización, relieve, geología, usos del suelo, población, parcelario, red viaria y zonas protegidas. La capa base sobre la que apoyar cualquier planificación.</p>
         <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-1-situacion.jpg" alt="Mapa de situación y localización territorial"></figure>
       </div>
-      <div class="card">
-        <div class="card-title">Teledetección y cambio de cobertura</div>
+      <div class="card" style="border-top:3px solid var(--gh-purple);">
+        <div class="card-title">🛰️ Teledetección y cambio de cobertura</div>
         <p class="card-body">Detección de cambios reales entre dos fechas con índices espectrales (NDVI, NDWI, NDBI, NBR) sobre Sentinel-2: pérdida o ganancia de vegetación, suelo construido nuevo, humedad y severidad de quemas, con umbrales explícitos y síntesis cruzada.</p>
         <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-2-teledeteccion.jpg" alt="Índices NDVI, NDWI, NDBI y NBR con detección de cambios"></figure>
       </div>
-      <div class="card">
-        <div class="card-title">Visores cartográficos interactivos</div>
+      <div class="card" style="border-top:3px solid var(--color-accent-700);">
+        <div class="card-title">🖥️ Visores cartográficos interactivos</div>
         <p class="card-body">Geoportales listos para publicar en la web de tu ayuntamiento o proyecto: capas activables, consulta de atributos, exportación del mapa a PNG/PDF con escala, leyenda y norte. Sin software SIG que instalar, cruzando incluso capas propias como el SIGPAC frente al NDVI para detectar discrepancias parcela a parcela. También creamos visores a medida de tu territorio, con las capas y funciones que necesites: un archivo HTML autónomo, sin instalación ni conocimientos de SIG, pensado para que un ayuntamiento pequeño pueda consultar y gestionar su propia información territorial.</p>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin-top: var(--space-4);">
           <figure class="plate gh-plate" style="margin: 0;"><img src="assets/servicio-3-visor-riosa.jpg" alt="Geoportal analítico TERRA de la parroquia de Riosa con discrepancias SIGPAC frente a NDVI"></figure>
           <figure class="plate gh-plate" style="margin: 0;"><img src="assets/servicio-3-visor-riosa-detalle.jpg" alt="Detalle ampliado del visor con discrepancias SIGPAC frente a NDVI"></figure>
         </div>
       </div>
-      <div class="card">
-        <div class="card-title">Riesgos y medio natural</div>
+      <div class="card" style="border-top:3px solid var(--gh-purple);">
+        <div class="card-title">⚠️ Riesgos y medio natural</div>
         <p class="card-body">Inundabilidad oficial (SNCZI) cruzada con los usos del suelo reales, para saber qué hay expuesto y no solo dónde llega el agua.</p>
         <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/caso-visor-ribera.jpg" alt="Inundabilidad SNCZI y usos del suelo en Ribera de Arriba"></figure>
         <p class="card-body" style="margin-top: var(--space-4);">Discrepancias entre el uso declarado y el uso real detectado por teledetección, localizadas dentro de zonas protegidas.</p>
@@ -155,13 +233,13 @@
         <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-4-geologia.jpg" alt="Mapa geológico de Ribera de Arriba"></figure>
         <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-4-mterreno.jpg" alt="Movimientos del terreno IGME en Ribera de Arriba"></figure>
       </div>
-      <div class="card">
-        <div class="card-title">Accesibilidad y análisis de red</div>
+      <div class="card" style="border-top:3px solid var(--color-accent-700);">
+        <div class="card-title">🛣️ Accesibilidad y análisis de red</div>
         <p class="card-body">Isócronas reales calculadas sobre la red viaria oficial — no en línea recta — para planificar servicios, emergencias o ubicaciones: tiempos de acceso desde y hacia cualquier núcleo.</p>
         <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-5-accesibilidad.jpg" alt="Red viaria e isócronas de accesibilidad"></figure>
       </div>
-      <div class="card">
-        <div class="card-title">Informes técnicos y estrategia</div>
+      <div class="card" style="border-top:3px solid var(--gh-purple);">
+        <div class="card-title">📊 Informes técnicos y estrategia</div>
         <p class="card-body">Del mapa a la decisión: primero se cierra el diagnóstico del suelo — conflictos de uso, aptitud agraria, abandono y fragmentación parcelaria — con cifras concretas por municipio.</p>
         <figure class="plate gh-plate" style="margin: var(--space-4) 0 0;"><img src="assets/servicio-4-riesgos.jpg" alt="Diagnóstico del suelo: conflictos de uso en zonas protegidas y aptitud agraria"></figure>
         <p class="card-body" style="margin-top: var(--space-4);">Después, ese diagnóstico se traduce en análisis DAFO y CAME y en un informe técnico en PDF centrado en las líneas de actuación prioritarias.</p>
@@ -174,6 +252,7 @@
 <hr class="hr">
 
 <!-- METODOLOGÍA -->
+<div class="gh-starry">
 <div class="gh-wrap">
   <section class="gh-section" id="metodo">
     <h2 class="gh-h2">Metodología: TERRA SISTEMA</h2>
@@ -184,9 +263,10 @@
       <div class="card gh-purple-card"><div class="card-title">3 · Supervisión experta</div><p class="card-body">Ningún resultado sale sin contraste humano: cada mapa se revisa a pie de trabajo y se documenta con fuente, fecha, sistema de referencia y criterio técnico.</p></div>
     </div>
     <div class="card" style="margin-top: var(--space-6);">
-      <p class="card-body" style="text-align: center;">Los escenarios que se entregan son proyecciones cualitativas bajo hipótesis explícitas y siempre documentadas: la claridad sobre los límites del análisis forma parte del rigor técnico de cada encargo.</p>
+      <p class="card-body" style="text-align: center;">Cada encargo se cierra con la entrega de la cartografía generada y un informe técnico en PDF que reúne los mapas, las cifras y las conclusiones del análisis — adaptado a la necesidad concreta que nos plantees, ya sea justificar una decisión, documentar una solicitud ante la administración o simplemente entender mejor tu territorio.</p>
     </div>
   </section>
+</div>
 </div>
 
 <hr class="hr">
@@ -195,36 +275,37 @@
 <div class="gh-wrap">
   <section class="gh-section" id="packs">
     <h2 class="gh-h2">Qué tipos de análisis hacemos</h2>
-    <div class="gh-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-      
-      
-        <div class="card gh-purple-card">
-          <div class="card-title">Diagnóstico esencial</div>
-          <p class="card-body">Contexto y localización, relieve, usos del suelo y red viaria. Mapas temáticos en alta resolución e informe resumen en PDF.</p>
-          <p class="card-meta">Presupuesto a medida según extensión</p>
-        </div>
-      
-      
-        <div class="card gh-purple-card" style="border-color: var(--gh-purple);">
-          <span style="margin-bottom: var(--space-3); display: inline-flex; width: fit-content; padding: 3px 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-sm); color: var(--gh-purple); border: 1px solid var(--gh-purple); background: var(--gh-purple-tint);">Más solicitado</span>
-          <div class="card-title">Diagnóstico completo</div>
-          <p class="card-body">Todo lo anterior más geología, parcelario, accesibilidad real, zonas protegidas, teledetección de cambios 2018–2026 y síntesis cruzada. Incluye visor interactivo publicable y análisis DAFO/CAME.</p>
-          <p class="card-meta">El encargo más solicitado</p>
-        </div>
-      
-      
-      
-      
-        <div class="card gh-purple-card">
-          <div class="card-title">Servicio continuo</div>
-          <p class="card-body">Seguimiento temporal de tu territorio: actualización anual de cambios de cobertura, alertas de nuevos suelos construidos y mantenimiento del geoportal municipal.</p>
-          <p class="card-meta">Cuota anual</p>
-        </div>
-      
+    <div class="gh-grid gh-grid-2">
       <div class="card gh-purple-card">
-        <div class="card-title">Memorias técnicas para subvenciones</div>
+        <div class="card-title">📋 Diagnóstico esencial</div>
+        <p class="card-body">Contexto y localización, relieve, usos del suelo y red viaria. Mapas temáticos en alta resolución e informe resumen en PDF.</p>
+        <p class="card-meta">Presupuesto a medida según extensión</p>
+      </div>
+      <div class="card gh-purple-card" style="border-color: var(--gh-purple);">
+        <span style="margin-bottom: var(--space-3); display: inline-flex; width: fit-content; padding: 3px 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-sm); color: var(--gh-purple); border: 1px solid var(--gh-purple); background: var(--gh-purple-tint);">Más solicitado</span>
+        <div class="card-title">📈 Diagnóstico completo</div>
+        <p class="card-body">Todo lo anterior más geología, parcelario, accesibilidad real, zonas protegidas, teledetección de cambios 2018–2026 y síntesis cruzada. Incluye visor interactivo publicable y análisis DAFO/CAME.</p>
+        <p class="card-meta">El encargo más solicitado</p>
+      </div>
+      <div class="card gh-purple-card">
+        <div class="card-title">🔄 Servicio continuo</div>
+        <p class="card-body">Seguimiento temporal de tu territorio: actualización anual de cambios de cobertura, alertas de nuevos suelos construidos y mantenimiento del geoportal municipal.</p>
+        <p class="card-meta">Cuota anual</p>
+      </div>
+      <div class="card gh-purple-card">
+        <div class="card-title">📄 Memorias técnicas para subvenciones</div>
         <p class="card-body">Documentación técnica y cartográfica para solicitar ayudas de restauración, mantenimiento o rehabilitación del patrimonio: memorias valoradas, fichas de catalogación y estado de conservación.</p>
         <p class="card-meta">Presupuesto según convocatoria</p>
+      </div>
+      <div class="card gh-purple-card">
+        <div class="card-title">📑 Informes territoriales a medida</div>
+        <p class="card-body">Análisis territorial completo y detallado, enfocado desde el punto de vista concreto que necesites: urbanístico, patrimonial, ambiental o el que nos plantees.</p>
+        <p class="card-meta">Presupuesto según alcance</p>
+      </div>
+      <div class="card gh-purple-card">
+        <div class="card-title">💬 Consulta territorial abierta</div>
+        <p class="card-body">Atendemos cualquier duda o encargo sobre gestión de recursos, SIG, análisis territorial o normativa de ordenación aplicable a tu estrategia territorial, aunque no encaje en ninguno de los apartados anteriores.</p>
+        <p class="card-meta">Sin compromiso</p>
       </div>
     </div>
     <p style="text-align: center; margin: var(--space-6) 0 0;"><a class="btn btn-primary" href="#contacto">Pide tu presupuesto sin compromiso</a></p>
@@ -234,10 +315,15 @@
 <hr class="hr">
 
 <!-- CASO REAL -->
+<div class="gh-starry">
 <div class="gh-wrap">
   <section class="gh-section" id="caso">
     <h2 class="gh-h2">Un caso real: Ribera de Arriba</h2>
     <p class="gh-p">Este es el trabajo que se puede ver completo en nuestro portfolio cartográfico: un retrato territorial del concejo asturiano de Ribera de Arriba que combinó fuentes oficiales con procesamiento propio. Algunos resultados, en cifras:</p>
+    <div style="text-align: center; margin: var(--space-6) 0;">
+      <div id="gh-visor-map" style="width: 100%; height: 320px; border-radius: var(--radius-sm); box-shadow: 0 0 0 2px var(--color-accent-700), 0 0 0 4px var(--gh-purple);"></div>
+      <p class="gh-cap" style="margin-top: var(--space-3);">Toca la lupa sobre el mapa para recorrer los resultados de este mismo análisis</p>
+    </div>
     <div class="gh-grid gh-grid-3">
       <div class="card gh-purple-card" style="text-align: center;">
         <p class="gh-purple-num" style="font-family: var(--font-heading); font-weight: 400; font-size: 44px; font-feature-settings: 'tnum' 1; margin: 0;">24,7%</p>
@@ -259,8 +345,9 @@
       <figure class="plate gh-plate" style="margin: 0;"><img src="assets/caso-parcelario.jpg" alt="Fragmentación parcelaria catastral de Ribera de Arriba"></figure>
       <figure class="plate gh-plate" style="margin: 0;"><img src="assets/caso-cambios-nbr.jpg" alt="Detección de cambios NBR 2018-2026 en Ribera de Arriba"></figure>
     </div>
-    <p style="text-align: center; margin: var(--space-6) 0 0;"><a class="btn btn-secondary" href="https://ghistora-consultoria.github.io/PORTFOLIO-CARTOGRAFICO/" target="_blank" rel="noopener">Ver un ejemplo completo</a></p>
+    <p style="text-align: center; margin: var(--space-6) 0 0;"><a class="gh-blink-link" href="https://ghistora-consultoria.github.io/PORTFOLIO-CARTOGRAFICO/" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 22px; border-radius: var(--radius-sm); background: var(--color-accent-700); color: #fff; text-decoration: none; font-family: var(--font-body); font-size: 15px;">Ver un ejemplo completo ↗</a></p>
   </section>
+</div>
 </div>
 
 <hr class="hr">
@@ -269,12 +356,36 @@
 <div class="gh-wrap">
   <section class="gh-section" id="quien">
     <h2 class="gh-h2">Quién está detrás del mapa</h2>
-    <div style="display: grid; gap: var(--space-6); grid-template-columns: minmax(0,220px) minmax(0,1fr); align-items: start;">
-      <figure class="plate gh-plate" style="margin: 0; position: relative; z-index: 1; background: var(--color-bg);"><img src="assets/foto-nelida.jpg" alt="Nélida Pamela Díaz Colodrero" style="aspect-ratio: 3/4; object-fit: cover;"></figure>
+    <style>@media (min-width: 640px) { #gh-quien-grid { grid-template-columns: minmax(0,220px) minmax(0,1fr) !important; } }</style>
+    <div id="gh-quien-grid" style="display: grid; gap: var(--space-6); grid-template-columns: minmax(0,1fr); align-items: start;">
+      <figure class="plate gh-plate" style="margin: 0; position: relative; z-index: 1; background: var(--color-bg); max-width: 220px; justify-self: center;"><img src="assets/foto-nelida.jpg" alt="Nélida Pamela Díaz Colodrero" style="aspect-ratio: 3/4; object-fit: cover;"></figure>
       <p class="gh-p">GHistora Consultoría Territorial está dirigida por <strong>Nélida Pamela Díaz Colodrero</strong>, graduada en Historia por la Universidad de Oviedo y máster en Recursos Territoriales y Estrategias de Ordenación (Universidad de Oviedo / Universidad de Cantabria). El estudio nace de unir dos miradas: la del territorio leído en el tiempo, propia de la historia, y la del territorio medido con precisión, propia de los sistemas de información geográfica. Esa doble lectura hace que cada entregable esté contrastado con criterio experto, capa por capa, antes de llegar al cliente.</p>
     </div>
-    <p class="gh-cap" style="text-align: center; margin-top: var(--space-6);">Historia y territorio, leídos con el mismo rigor.</p>
+    <p class="gh-cap" style="text-align: center; margin-top: var(--space-6);">Historia y territorio leídos con el mismo rigor porque entender un lugar es el primer paso para decidir bien sobre él.</p>
   </section>
+</div>
+
+<hr class="hr">
+
+<!-- TESTIMONIOS -->
+<div class="gh-starry">
+<div class="gh-wrap">
+  <section class="gh-section" id="testimonios">
+    <h2 class="gh-h2">Lo que dicen de nosotros</h2>
+    <div class="gh-grid gh-grid-2">
+      <div class="card gh-purple-card">
+        <p class="gh-p" style="font-style: italic; text-align: left;">"El enfoque histórico sumado al análisis territorial nos da una visión más completa de cualquier territorio. GHistora lleva la teoría a la práctica."</p>
+        <div class="card-title" style="margin-top: var(--space-3);">Daniel Coalla García</div>
+        <p class="card-meta">Historiador, doctorando</p>
+      </div>
+      <div class="card gh-purple-card">
+        <p class="gh-p" style="font-style: italic; text-align: left;">"Con GHistora comprendí de una manera fácil el lenguaje técnico de un territorio por primera vez."</p>
+        <div class="card-title" style="margin-top: var(--space-3);">Daniel Sáez Vázquez</div>
+        <p class="card-meta">Cliente · análisis de una parcela familiar en Mieres</p>
+      </div>
+    </div>
+  </section>
+</div>
 </div>
 
 <hr class="hr">
@@ -287,6 +398,14 @@
     <p style="margin: var(--space-6) 0 var(--space-2); font-size: 21px;"><a href="mailto:ghistora@gmail.com">ghistora@gmail.com</a></p>
     <p style="margin: 0 0 var(--space-2); font-size: 21px;"><a href="mailto:npameladiazcolodrero@gmail.com">npameladiazcolodrero@gmail.com</a></p>
     <p><a href="https://ghistora-consultoria.github.io/PORTFOLIO-CARTOGRAFICO/" target="_blank" rel="noopener" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--color-divider); padding-bottom: 2px;">Ver un ejemplo completo ↗</a></p>
+    <form id="gh-contact-form" action="https://formspree.io/f/mnpqkdnk" method="POST" style="max-width:480px; margin:var(--space-8) auto 0; display:flex; flex-direction:column; gap:var(--space-3); text-align:left;">
+      <p class="gh-cap" style="text-align:center;">O escríbenos directamente desde aquí</p>
+      <input type="text" name="nombre" placeholder="Nombre" required style="font-family:var(--font-body); font-size:16px; padding:10px 14px; border:1px solid var(--color-divider); border-radius:var(--radius-sm); background:var(--color-surface); color:var(--color-text);">
+      <input type="email" name="email" placeholder="nombre@ejemplo.com" required style="font-family:var(--font-body); font-size:16px; padding:10px 14px; border:1px solid var(--color-divider); border-radius:var(--radius-sm); background:var(--color-surface); color:var(--color-text);">
+      <textarea name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas" required style="font-family:var(--font-body); font-size:16px; padding:10px 14px; border:1px solid var(--color-divider); border-radius:var(--radius-sm); background:var(--color-surface); color:var(--color-text);"></textarea>
+      <button type="submit" class="btn btn-primary" style="align-self:center;">Enviar mensaje</button>
+      <p id="gh-form-ok" hidden style="text-align:center; color:var(--color-accent-700);">Mensaje enviado. Te responderemos en breve.</p>
+    </form>
   </section>
 </div>
 
@@ -297,6 +416,18 @@
   </footer>
 </div>
 </div>
+
+<div style="position:fixed; bottom:22px; right:22px; z-index:20; display:flex; align-items:center; gap:10px;">
+  <div style="background:#fff; color:#201f1d; font-family:var(--font-body); font-size:14px; padding:8px 14px; border-radius:999px; box-shadow:var(--shadow-md); white-space:nowrap;">Hablemos</div>
+  <a id="gh-whatsapp" href="https://wa.me/34603852497" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" style="width:52px; height:52px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:var(--shadow-lg); flex-shrink:0;">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.29.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.45.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+  </a>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="ghistora-interactivo.js"></script>
 
 <script>
 (function () {
